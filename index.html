@@ -3,749 +3,376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miaugica - Acessórios Exclusivos para Gatos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Nosso Jardim do Amor</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
+        /* CSS Romântico - Azul e Roxo */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff5f5;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
         }
         
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
-        }
-        
-        .cat-paw {
+        .particles-container {
             position: absolute;
-            width: 40px;
-            height: 40px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e91e63'%3E%3Cpath d='M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            font-size: 24px;
+            animation: float 8s ease-in-out infinite;
             opacity: 0;
-            z-index: 9999;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        
+        .heart {
+            color: rgba(255, 105, 180, 0.8);
+        }
+        
+        .flower {
+            color: rgba(255, 240, 150, 0.8);
         }
         
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
         }
         
-        .floating {
-            animation: float 3s ease-in-out infinite;
+        .couple-container {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2),
+                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
         }
         
-        .bg-miaugica {
-            background-color: #e91e63;
+        .couple-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+                       inset 0 0 30px rgba(255, 255, 255, 0.4);
         }
         
-        .text-miaugica {
-            color: #e91e63;
+        .couple-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+                       0 0 0 10px rgba(138, 43, 226, 0.3);
+            margin-bottom: 25px;
+            transition: all 0.5s ease;
+            filter: brightness(105%) saturate(110%);
         }
         
-        .border-miaugica {
-            border-color: #e91e63;
+        .couple-photo:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
+                       0 0 0 10px rgba(255, 105, 180, 0.4);
         }
         
-        .hover\:bg-miaugica:hover {
-            background-color: #c2185b;
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        
+        .names {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 3.5rem;
+            color: #ffccf9;
+            margin: 15px 0;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #e6e6ff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .love-btn {
+            background: linear-gradient(45deg, #9d50bb, #6e48aa);
+            border: none;
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
+                       inset 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: all 0.4s;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+        
+        .love-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4),
+                       inset 0 0 15px rgba(255, 255, 255, 0.4);
+            background: linear-gradient(45deg, #b366ff, #8a2be2);
+        }
+        
+        .love-btn:active {
+            transform: translateY(2px);
+        }
+        
+        .love-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .love-btn:hover::before {
+            left: 100%;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: sparkle 1s ease-out;
+            z-index: 1;
+        }
+        
+        @keyframes sparkle {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 192, 203, 0.7);
+            animation: floating 15s linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translateY(100vh) translateX(0);
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header/Navbar -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <i class="fas fa-cat text-3xl text-pink-600 mr-2"></i>
-                    <a href="#" class="text-2xl font-bold text-pink-600">Miaugica</a>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-800 hover:text-pink-600 font-medium">Home</a>
-                    <a href="#products" class="text-gray-800 hover:text-pink-600 font-medium">Produtos</a>
-                    <a href="#about" class="text-gray-800 hover:text-pink-600 font-medium">Sobre</a>
-                    <a href="#contact" class="text-gray-800 hover:text-pink-600 font-medium">Contato</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="text-gray-800 hover:text-pink-600">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <a href="#" class="text-gray-800 hover:text-pink-600 relative">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" id="cart-count">0</span>
-                    </a>
-                    <button class="md:hidden text-gray-800 focus:outline-none">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section text-white py-20 md:py-32">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">O Paraíso Felino</h1>
-            <p class="text-xl md:text-2xl mb-8">Acessórios exclusivos para gatos que amam o luxo</p>
-            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
-                Descubra Nossos Produtos
-            </button>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-lg bg-pink-50">
-                    <div class="bg-pink-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-truck text-pink-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Frete Grátis</h3>
-                    <p class="text-gray-600">Para compras acima de R$150 em todo o Brasil</p>
-                </div>
-                <div class="text-center p-6 rounded-lg bg-pink-50">
-                    <div class="bg-pink-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-shield-alt text-pink-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Garantia</h3>
-                    <p class="text-gray-600">30 dias de garantia em todos os produtos</p>
-                </div>
-                <div class="text-center p-6 rounded-lg bg-pink-50">
-                    <div class="bg-pink-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-headset text-pink-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Suporte 24/7</h3>
-                    <p class="text-gray-600">Atendimento especializado para você e seu gato</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-16 bg-pink-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-pink-600">Nossos Produtos Exclusivos</h2>
-            
-            <div class="flex justify-center mb-8">
-                <div class="inline-flex rounded-md shadow-sm">
-                    <button class="px-4 py-2 text-sm font-medium rounded-l-lg bg-pink-600 text-white">
-                        Todos
-                    </button>
-                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-pink-100">
-                        Arranhadores
-                    </button>
-                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-pink-100">
-                        Brinquedos
-                    </button>
-                    <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-pink-100">
-                        Caminhas
-                    </button>
-                    <button class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-gray-700 hover:bg-pink-100">
-                        Coleiras
-                    </button>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Product 1 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border-2 border-pink-100">
-                    <div class="relative">
-                        <img src="IMAGENS P CÓDIGOS/arranhador.jpg" alt="Arranhador de luxo para gatos" class="w-full h-64 object-cover">
-                        <div class="absolute top-2 right-2 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                            NOVO
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-1">Arranhador Luxo</h3>
-                        <p class="text-gray-600 text-sm mb-2">Arranhador premium com plataforma e casa</p>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="text-gray-600 text-xs ml-1">(42)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-gray-800">R$ 289,90</span>
-                            <button class="add-to-cart bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full text-sm transition duration-300" data-id="1" data-name="Arranhador Luxo" data-price="289.90">
-                                <i class="fas fa-cart-plus"></i> Adicionar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border-2 border-pink-100">
-                    <div class="relative">
-                        <img src="IMAGENS P CÓDIGOS/IMAGENS P CÓDIGOS/coleira diamante.jpg" alt="Coleira para gatos" class="w-full h-64 object-cover">
-                        <div class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                            POPULAR
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-1">Coleira Diamante</h3>
-                        <p class="text-gray-600 text-sm mb-2">Coleira de couro com pingente de cristal</p>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="text-gray-600 text-xs ml-1">(86)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-gray-800">R$ 89,90</span>
-                            <button class="add-to-cart bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full text-sm transition duration-300" data-id="2" data-name="Coleira Diamante" data-price="89.90">
-                                <i class="fas fa-cart-plus"></i> Adicionar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border-2 border-pink-100">
-                    <div class="relative">
-                        <img src="IMAGENS P CÓDIGOS/cama para gato.png" alt="Cama para gatos" class="w-full h-64 object-cover">
-                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                            PROMO
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-1">Cama Premium</h3>
-                        <p class="text-gray-600 text-sm mb-2">Cama macia e quentinha com aquecedor</p>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="text-gray-600 text-xs ml-1">(128)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <span class="text-gray-400 text-sm line-through mr-2">R$ 229,90</span>
-                                <span class="font-bold text-gray-800">R$ 179,90</span>
-                            </div>
-                            <button class="add-to-cart bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full text-sm transition duration-300" data-id="3" data-name="Cama Premium" data-price="179.90">
-                                <i class="fas fa-cart-plus"></i> Adicionar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border-2 border-pink-100">
-                    <div class="relative">
-                        <img src="IMAGENS P CÓDIGOS/brinquedo.webp" alt="Brinquedo para gatos" class="w-full h-64 object-cover">
-                        <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                            TOP
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-1">Kit Brinquedos Luxo</h3>
-                        <p class="text-gray-600 text-sm mb-2">5 brinquedos interativos premium</p>
-                        <div class="flex items-center mb-2">
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="text-gray-600 text-xs ml-1">(215)</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-gray-800">R$ 129,90</span>
-                            <button class="add-to-cart bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full text-sm transition duration-300" data-id="4" data-name="Kit Brinquedos Luxo" data-price="129.90">
-                                <i class="fas fa-cart-plus"></i> Adicionar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
-                    Ver Todos os Produtos
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Gato usando nossos produtos" class="rounded-lg shadow-xl floating">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold mb-6 text-pink-600">Sobre a Miaugica</h2>
-                    <p class="text-gray-600 mb-4">
-                        A Miaugica é mais que uma loja - é um estilo de vida para gatos sofisticados. Nossa paixão por felinos nos levou a criar uma linha exclusiva de produtos que combinam design, conforto e luxo.
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        Cada produto é cuidadosamente selecionado para atender aos gatos mais exigentes. Trabalhamos com designers especializados e materiais premium para garantir que seu gato tenha apenas o melhor.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-pink-100 p-4 rounded-lg flex-1 min-w-[150px]">
-                            <i class="fas fa-gem text-pink-600 text-2xl mb-2"></i>
-                            <h3 class="font-semibold">Luxo Felino</h3>
-                        </div>
-                        <div class="bg-pink-100 p-4 rounded-lg flex-1 min-w-[150px]">
-                            <i class="fas fa-heart text-pink-600 text-2xl mb-2"></i>
-                            <h3 class="font-semibold">Feito com Amor</h3>
-                        </div>
-                        <div class="bg-pink-100 p-4 rounded-lg flex-1 min-w-[150px]">
-                            <i class="fas fa-paw text-pink-600 text-2xl mb-2"></i>
-                            <h3 class="font-semibold">Aprovado por Gatos</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-16 bg-pink-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-pink-600">Nossos Clientes Miaugicam</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-600">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente satisfeita" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-semibold">Ana Carolina</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">
-                        "Meu gato persa adorou a cama premium! Ele nunca teve algo tão confortável. Agora ele dorme como um rei!"
-                    </p>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-600">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfeito" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-semibold">Ricardo Almeida</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">
-                        "O arranhador luxo é incrível! Meus 3 gatos brigam para usar. Valeu cada centavo pelo design e qualidade."
-                    </p>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-pink-600">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente satisfeita" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-semibold">Fernanda Santos</h4>
-                            <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">
-                        "A coleira diamante é deslumbrante! Meu gato siamês parece uma celebridade. O atendimento foi impecável!"
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="py-16 bg-gradient-to-r from-pink-600 to-purple-600 text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Junte-se ao Clube Miaugica</h2>
-            <p class="text-xl mb-8">Receba ofertas exclusivas e novidades para o seu gatinho!</p>
-            
-            <div class="max-w-md mx-auto flex">
-                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
-                <button class="bg-pink-800 hover:bg-pink-900 px-6 py-3 rounded-r-lg font-semibold transition duration-300">
-                    Assinar
-                </button>
-            </div>
-            
-            <p class="mt-4 text-sm text-pink-100">Prometemos não enviar spam. Apenas conteúdo felino!</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-pink-600">Miaugique Conosco</h2>
-            
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-                    <h3 class="text-xl font-semibold mb-4">Informações de Contato</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-pink-600 mt-1 mr-3"></i>
-                            <p>Rua dos Gatos, 123 - Jardim Felino<br>São Paulo/SP - CEP 01001-000</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone-alt text-pink-600 mr-3"></i>
-                            <p>(11) 9876-5432</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-pink-600 mr-3"></i>
-                            <p>contato@miaugica.com.br</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h3 class="text-xl font-semibold mb-4">Horário de Funcionamento</h3>
-                        <p class="mb-2"><span class="font-medium">Segunda a Sexta:</span> 9h às 18h</p>
-                        <p><span class="font-medium">Sábado:</span> 9h às 13h</p>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h3 class="text-xl font-semibold mb-4">Siga-nos</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="bg-pink-100 hover:bg-pink-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300 text-pink-600">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="bg-pink-100 hover:bg-pink-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300 text-pink-600">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="bg-pink-100 hover:bg-pink-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300 text-pink-600">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                            <a href="#" class="bg-pink-100 hover:bg-pink-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300 text-pink-600">
-                                <i class="fab fa-pinterest"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold mb-4">Envie uma Mensagem</h3>
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 mb-1">Nome</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 mb-1">E-mail</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        </div>
-                        <div>
-                            <label for="subject" class="block text-gray-700 mb-1">Assunto</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 mb-1">Mensagem</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
-                        </div>
-                        <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 w-full">
-                            Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <div class="flex items-center">
-                        <i class="fas fa-cat text-3xl text-pink-400 mr-2"></i>
-                        <span class="text-2xl font-bold text-pink-400">Miaugica</span>
-                    </div>
-                    <p class="text-gray-400 text-sm mt-2">© 2023 Todos os direitos reservados</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                    <a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Termos de Serviço</a>
-                    <a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Política de Privacidade</a>
-                    <a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">FAQ</a>
-                    <a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300">Trocas e Devoluções</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Cart Button (Mobile) -->
-    <div class="md:hidden fixed bottom-6 right-6">
-        <button class="bg-pink-600 hover:bg-pink-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition duration-300">
-            <i class="fas fa-shopping-cart text-xl"></i>
-            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" id="mobile-cart-count">0</span>
-        </button>
-    </div>
-
-    <!-- Cart Modal -->
-    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-        <div class="absolute top-0 right-0 h-full w-full md:w-1/3 bg-white shadow-xl overflow-y-auto">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-pink-600">Seu Carrinho Miaugica</h3>
-                    <button id="close-cart" class="text-gray-500 hover:text-pink-600">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                
-                <div id="cart-items" class="space-y-4 mb-6">
-                    <!-- Cart items will be added here by JavaScript -->
-                    <p class="text-gray-500 text-center py-8">Seu carrinho está vazio</p>
-                </div>
-                
-                <div class="border-t border-gray-200 pt-4 mb-6">
-                    <div class="flex justify-between mb-2">
-                        <span class="font-semibold">Subtotal</span>
-                        <span id="cart-subtotal">R$ 0,00</span>
-                    </div>
-                    <div class="flex justify-between mb-2">
-                        <span class="font-semibold">Frete</span>
-                        <span id="cart-shipping">A calcular</span>
-                    </div>
-                    <div class="flex justify-between text-lg font-bold text-pink-600">
-                        <span>Total</span>
-                        <span id="cart-total">R$ 0,00</span>
-                    </div>
-                </div>
-                
-                <button class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-lg transition duration-300">
-                    Finalizar Compra
-                </button>
-            </div>
-        </div>
+    <div class="particles-container" id="particles"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="couple-container">
+        <!-- Substitua pela foto do casal -->
+        <img src="WhatsApp Image 2025-05-17 at 21.28.44 (1).jpeg" alt="Nós" class="couple-photo" id="couplePhoto">
+        <h1>Para</h1>
+        <div class="names" id="coupleNames">Lívia & Luiz</div>
+        <p id="loveMessage">Nosso amor é como um jardim - quanto mais regamos com carinho, mais floresce em beleza e alegria.</p>
+        <button class="love-btn" id="loveBtn">Regar Nosso Amor</button>
     </div>
 
     <script>
-        // Cat paw cursor effect
+        // JavaScript Romântico com Flores e Corações
         document.addEventListener('DOMContentLoaded', function() {
-            const body = document.querySelector('body');
-            const paws = [];
+            // Elementos DOM
+            const particlesContainer = document.getElementById('particles');
+            const floatingHeartsContainer = document.getElementById('floatingHearts');
+            const loveBtn = document.getElementById('loveBtn');
+            const loveMessage = document.getElementById('loveMessage');
             
-            // Create 5 paw elements
-            for (let i = 0; i < 5; i++) {
-                const paw = document.createElement('div');
-                paw.className = 'cat-paw';
-                body.appendChild(paw);
-                paws.push(paw);
-            }
+            // Símbolos para partículas
+            const heartSymbols = ['❤', '💖', '💗', '💓', '💞', '💕', '💘', '💝'];
+            const flowerSymbols = ['🌸', '🌹', '🌺', '🌻', '🌼', '🌷', '💐', '🏵️'];
             
-            let currentPaw = 0;
-            
-            document.addEventListener('mousemove', function(e) {
-                const paw = paws[currentPaw];
-                paw.style.left = (e.pageX - 20) + 'px';
-                paw.style.top = (e.pageY - 20) + 'px';
-                paw.style.opacity = '1';
+            // Criar partículas flutuantes (corações e flores)
+            function createParticles() {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
                 
-                setTimeout(function() {
-                    paw.style.opacity = '0';
-                }, 500);
-                
-                currentPaw = (currentPaw + 1) % paws.length;
-            });
-            
-            // Shopping cart functionality
-            let cart = [];
-            const cartCountElements = document.querySelectorAll('#cart-count, #mobile-cart-count');
-            const cartModal = document.getElementById('cart-modal');
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartSubtotal = document.getElementById('cart-subtotal');
-            const cartTotal = document.getElementById('cart-total');
-            const cartShipping = document.getElementById('cart-shipping');
-            
-            // Add to cart buttons
-            document.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-                    const name = this.getAttribute('data-name');
-                    const price = parseFloat(this.getAttribute('data-price'));
-                    
-                    // Check if item already in cart
-                    const existingItem = cart.find(item => item.id === id);
-                    
-                    if (existingItem) {
-                        existingItem.quantity += 1;
-                    } else {
-                        cart.push({
-                            id,
-                            name,
-                            price,
-                            quantity: 1
-                        });
-                    }
-                    
-                    updateCart();
-                    
-                    // Show feedback
-                    this.innerHTML = '<i class="fas fa-check"></i> Adicionado';
-                    this.classList.remove('bg-pink-600', 'hover:bg-pink-700');
-                    this.classList.add('bg-green-500', 'hover:bg-green-600');
-                    
-                    setTimeout(() => {
-                        this.innerHTML = '<i class="fas fa-cart-plus"></i> Adicionar';
-                        this.classList.remove('bg-green-500', 'hover:bg-green-600');
-                        this.classList.add('bg-pink-600', 'hover:bg-pink-700');
-                    }, 2000);
-                });
-            });
-            
-            // Open cart modal
-            document.querySelectorAll('#cart-count, #mobile-cart-count').forEach(element => {
-                element.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    cartModal.classList.remove('hidden');
-                });
-            });
-            
-            // Close cart modal
-            document.getElementById('close-cart').addEventListener('click', function() {
-                cartModal.classList.add('hidden');
-            });
-            
-            // Update cart function
-            function updateCart() {
-                // Update cart count
-                const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
-                cartCountElements.forEach(element => {
-                    element.textContent = itemCount;
-                });
-                
-                // Update cart modal
-                if (cart.length === 0) {
-                    cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">Seu carrinho está vazio</p>';
-                    cartSubtotal.textContent = 'R$ 0,00';
-                    cartTotal.textContent = 'R$ 0,00';
-                    cartShipping.textContent = 'A calcular';
-                    return;
-                }
-                
-                // Calculate subtotal
-                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-                cartSubtotal.textContent = R$ ${subtotal.toFixed(2).replace('.', ',')};
-                
-                // Calculate shipping (free for orders over 150)
-                let shipping = 15.00;
-                if (subtotal >= 150) {
-                    shipping = 0;
-                    cartShipping.textContent = 'Grátis';
+                // Escolher aleatoriamente entre coração ou flor
+                if (Math.random() > 0.5) {
+                    particle.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                    particle.classList.add('heart');
                 } else {
-                    cartShipping.textContent = R$ ${shipping.toFixed(2).replace('.', ',')};
+                    particle.innerHTML = flowerSymbols[Math.floor(Math.random() * flowerSymbols.length)];
+                    particle.classList.add('flower');
                 }
                 
-                // Calculate total
-                const total = subtotal + shipping;
-                cartTotal.textContent = R$ ${total.toFixed(2).replace('.', ',')};
+                // Posição aleatória
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 50 + 'vh';
                 
-                // Update cart items
-                cartItemsContainer.innerHTML = '';
-                cart.forEach(item => {
-                    const itemElement = document.createElement('div');
-                    itemElement.className = 'flex justify-between items-center border-b border-gray-100 pb-4';
-                    itemElement.innerHTML = `
-                        <div>
-                            <h4 class="font-medium">${item.name}</h4>
-                            <div class="flex items-center mt-1">
-                                <button class="decrease-quantity text-gray-500 hover:text-pink-600" data-id="${item.id}">
-                                    <i class="fas fa-minus text-xs"></i>
-                                </button>
-                                <span class="mx-2">${item.quantity}</span>
-                                <button class="increase-quantity text-gray-500 hover:text-pink-600" data-id="${item.id}">
-                                    <i class="fas fa-plus text-xs"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <div class="font-medium">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</div>
-                            <button class="remove-item text-red-500 hover:text-red-700 text-sm mt-1" data-id="${item.id}">
-                                <i class="fas fa-trash"></i> Remover
-                            </button>
-                        </div>
-                    `;
-                    cartItemsContainer.appendChild(itemElement);
-                });
+                // Tamanho aleatório
+                const size = Math.random() * 30 + 15;
+                particle.style.fontSize = size + 'px';
                 
-                // Add event listeners to quantity buttons
-                document.querySelectorAll('.increase-quantity').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const id = this.getAttribute('data-id');
-                        const item = cart.find(item => item.id === id);
-                        if (item) {
-                            item.quantity += 1;
-                            updateCart();
-                        }
-                    });
-                });
+                // Duração e delay aleatórios
+                const duration = Math.random() * 6 + 4;
+                const delay = Math.random() * 8;
+                particle.style.animationDuration = duration + 's';
+                particle.style.animationDelay = delay + 's';
                 
-                document.querySelectorAll('.decrease-quantity').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const id = this.getAttribute('data-id');
-                        const item = cart.find(item => item.id === id);
-                        if (item && item.quantity > 1) {
-                            item.quantity -= 1;
-                            updateCart();
-                        }
-                    });
-                });
+                particlesContainer.appendChild(particle);
                 
-                document.querySelectorAll('.remove-item').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const id = this.getAttribute('data-id');
-                        cart = cart.filter(item => item.id !== id);
-                        updateCart();
-                    });
-                });
+                // Remover partícula após a animação
+                setTimeout(() => {
+                    particle.remove();
+                }, (duration + delay) * 1000);
             }
             
-            // Smooth scrolling for navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+            // Criar corações flutuantes de fundo
+            function createFloatingHearts() {
+                for (let i = 0; i < 20; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('floating-heart');
+                    heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
                     
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
+                    // Posição e tamanho aleatórios
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    
+                    // Duração e delay aleatórios
+                    const duration = Math.random() * 20 + 10;
+                    const delay = Math.random() * 15;
+                    heart.style.animationDuration = duration + 's';
+                    heart.style.animationDelay = delay + 's';
+                    
+                    floatingHeartsContainer.appendChild(heart);
+                }
+            }
+            
+            // Criar efeito de brilho
+            function createSparkle(x, y) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+            
+            // Mensagens românticas
+            const messages = [
+                "Teu amor é como um jardim florido que nunca perde sua beleza.",
+                "Cada momento contigo é como uma pétala perfumada no livro da minha vida.",
+                "Nosso amor floresce mais a cada dia, como as rosas na primavera.",
+                "Você é a flor mais bela no jardim do meu coração.",
+                "Como as flores precisam do sol, eu preciso do teu amor todos os dias.",
+                "Nosso amor é como um buquê - cada flor uma lembrança especial.",
+                "Em teus braços encontrei o meu lugar para florescer.",
+                "Teu sorriso ilumina meu dia como o sol ilumina as flores.",
+                "Amo cada estação do nosso amor, como amo cada flor em seu tempo.",
+                "Você plantou amor no meu coração e agora colho felicidade."
+            ];
+            
+            // Inicializar efeitos
+            setInterval(createParticles, 300);
+            createFloatingHearts();
+            
+            // Efeito do botão
+            loveBtn.addEventListener('click', function() {
+                // Mensagem aleatória
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                loveMessage.textContent = messages[randomIndex];
+                
+                // Efeito visual do botão
+                this.innerHTML = '❤ Florescendo Amor ❤';
+                setTimeout(() => {
+                    this.innerHTML = 'Regar Nosso Amor';
+                }, 2000);
+                
+                // Explosão de partículas
+                for (let i = 0; i < 40; i++) {
+                    setTimeout(() => {
+                        createParticles();
+                    }, i * 50);
+                }
+                
+                // Efeito na foto
+                const photo = document.getElementById('couplePhoto');
+                photo.style.transform = 'scale(1.1) rotate(5deg)';
+                photo.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.4), 0 0 0 10px rgba(255, 215, 0, 0.4)';
+                setTimeout(() => {
+                    photo.style.transform = 'scale(1.08)';
+                    photo.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(138, 43, 226, 0.3)';
+                }, 500);
             });
+            
+            // Efeito de brilho ao mover o mouse
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.8) {
+                    createSparkle(e.pageX, e.pageY);
+                }
+            });
+            
+            // Personalização - substitua com os dados reais
+            // document.getElementById('coupleNames').textContent = "Ana & João";
+            // document.getElementById('couplePhoto').src = "caminho/para/foto-do-casal.jpg";
         });
     </script>
 </body>
